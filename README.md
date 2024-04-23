@@ -55,3 +55,12 @@ React-Spinners, React-Icons
 React-Spinners는 리액트 애플리케이션에서 로딩 스피너
 React-Icons는 다양한 아이콘
 5. https://ui.shadcn.com/
+
+
+
+
+# 배포
+
+
+1. https://vercel.com/
+![img.png](img.png)
