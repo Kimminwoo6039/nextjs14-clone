@@ -4,14 +4,16 @@ import React from 'react';
 
 const page = async () => {
 
-    console.log("before")
-    await sleep(4000);
-    console.log("after")
         // await sleep(2000);
         // throw new Error("my error");
     return (
-         <div>
+         <div className="min-h-[600px]">
+             {" "}
             Home Page
+             <div className="h-[500px] bg-neutral-700">Home Page</div>
+             <div className="h-[500px] bg-neutral-700">Home Page</div>
+             <div className="h-[500px] bg-neutral-700">Home Page</div>
+             <div className="h-[500px] bg-neutral-700">Home Page</div>
         </div>
     )
 };

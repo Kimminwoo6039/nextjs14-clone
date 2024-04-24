@@ -1,10 +1,15 @@
 import React from 'react'
+import Header from '@/components/elements/Header'
 
 // @ts-ignore
-const layout = ({children}) => {
+const layout = ({children}: {
+    children: React.ReactNode
+}) => {
     return (
-        <div>
-            {children}
+        <div className="w-full h-full">
+            <Header>
+                {children}
+            </Header>
         </div>
     )
 }
