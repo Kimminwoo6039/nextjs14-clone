@@ -4,8 +4,7 @@ import "./globals.css";
 import {ThemeProvider} from "@/providers/themeProvider";
 import Sidebar from "@/components/Sidebar";
 
-
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({subsets: ["greek-ext"]});
 
 export const metadata: Metadata = {
     title: "Clone demo",
@@ -16,10 +15,14 @@ export default async function RootLayout({
                                              children,
                                          }: Readonly<{
     children: React.ReactNode;
+
+
 }>) {
     return (
         <html lang="en">
-        <body className={inter.className}>
+        <body
+            // className={inter.className}
+        >
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"

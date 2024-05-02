@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from "@/components/elements/Logo";
+import {Component} from "@/components/elements/Navigator11";
 import Navigator from "@/components/elements/Navigator";
 
 

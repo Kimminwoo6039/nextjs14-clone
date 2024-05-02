@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image"
+import useUIState from "@/hooks/useUIState";
 import UserIcon from "@/components/UserIcon";
 import PagePadding from "@/components/PagePadding";
 import {FaChromecast} from "react-icons/fa";
@@ -18,10 +19,11 @@ import Logo from "@/components/elements/Logo";
 import Navigator from "@/components/elements/Navigator";
 import React, {useEffect, useRef, useState} from "react";
 import {cn} from "@/lib/utils";
+import {Component} from "@/components/elements/Navigator11";
 
 const HeaderDrawer = ({children}) => {
 
-    const [isOpen,setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
@@ -31,7 +33,9 @@ const HeaderDrawer = ({children}) => {
                 {/*  네비게이션 + 재생 목록 */}
                 <div className="py-3">
                     <div className="px-3">
-                        <Logo isInDrawer onClickClose={()=>{setIsOpen(false)}} />
+                        <Logo isInDrawer onClickClose={() => {
+                            setIsOpen(false)
+                        }}/>
                     </div>
                     <Navigator />
                 </div>
@@ -44,7 +48,9 @@ const HeaderDrawer = ({children}) => {
 
 const Header = ({children}) => {
 
-    const [isScrolled,setIsScrolled] = useState(false);
+    const {headerImageSrc} = useUIState()
+
+    const [isScrolled, setIsScrolled] = useState(false);
     const headRef = useRef();
 
 
@@ -55,10 +61,10 @@ const Header = ({children}) => {
             setIsScrolled(scrollValue !== 0)
         }
 
-        headRef?.current?.addEventListener("scroll",handleScroll);
+        headRef?.current?.addEventListener("scroll", handleScroll);
 
         return () => {
-            headRef?.current?.removeEventListener("scroll",handleScroll);
+            headRef?.current?.removeEventListener("scroll", handleScroll);
         }
     }, []);
 
@@ -69,7 +75,9 @@ const Header = ({children}) => {
                 <div className="relative h-[400px] w-full">
                     <Image fill
                            className="object-cover"
-                           src="https://cdn.pixabay.com/photo/2024/04/08/14/09/nature-8683570_1280.jpg"
+                           src={
+                               headerImageSrc || "https://cdn.pixabay.com/photo/2024/04/08/14/09/nature-8683570_1280.jpg"
+                           }
                            alt=""/>
                     <div className="absolute h-[400px] top-0 bg-black opacity-60 w-full"></div>
                     <div className="absolute h-[400px] top-0 bg-gradient-to-t from-black w-full"></div>
@@ -77,7 +85,7 @@ const Header = ({children}) => {
             </section>
             {/* search section  (sticky 필요) */}
             <section className={
-                cn("sticky top-0 left-0 z-10" , isScrolled && "bg-black")
+                cn("sticky top-0 left-0 z-10", isScrolled && "bg-black")
             }>
                 <PagePadding>
                     <div className="h-[64px] flex flex-row justify-between items-center">
@@ -103,7 +111,7 @@ const Header = ({children}) => {
                     </div>
                 </PagePadding>
             </section>
-            <section className="absolute">{children}</section>
+            <section className="absolute w-full">{children}</section>
         </header>
     )
 }

@@ -1,10 +1,17 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
 
 body {
   height: 100vh;
+  font-family: -apple-system, NanumPen, sans-serif;
+}
+
+@font-face {
+  font-family: "NanumPen";
+  font-weight: 200;
+  src: url("/fonts/NotoSansKR-SemiBold.ttf") format("truetype");
 }
 
   @layer base {
