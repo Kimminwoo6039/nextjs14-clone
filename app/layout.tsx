@@ -4,6 +4,7 @@ import "./globals.css";
 import {ThemeProvider} from "@/providers/themeProvider";
 import Sidebar from "@/components/Sidebar";
 
+
 const inter = Inter({subsets: ["greek-ext"]});
 
 export const metadata: Metadata = {
