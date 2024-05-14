@@ -1,11 +1,16 @@
-import React from 'react'
+import $ from 'jquery';
+import {DataTable1} from "@/app/explore/ReactTabulatorExample";
+import PagePadding from "@/components/PagePadding";
 
-const page = () => {
+const page = () =>  {
+
     return (
-        <div>
-            explore
-        </div>
-    )
+        <>
+            <PagePadding>
+            <DataTable1 />
+            </PagePadding>
+        </>
+    );
 }
 
 export default page

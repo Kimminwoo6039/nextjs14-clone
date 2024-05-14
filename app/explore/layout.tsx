@@ -5,9 +5,9 @@ import Header from "@/components/elements/Header";
 const layout = ({children}) => {
     return (
         <div className="w-full h-full">
-            <Header>
+            {/*<Header>*/}
                 {children}
-            </Header>
+            {/*</Header>*/}
         </div>
     )
 }

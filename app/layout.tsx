@@ -21,18 +21,18 @@ export default async function RootLayout({
     return (
         <html lang="en">
         <body
-            // className={inter.className}
+            className={inter.className}
         >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
+        {/*<ThemeProvider*/}
+        {/*    attribute="class"*/}
+        {/*    defaultTheme="System"*/}
+        {/*    enableSystem*/}
+        {/*    disableTransitionOnChange*/}
+        {/*>*/}
             <Sidebar>
                 {children}
             </Sidebar>
-        </ThemeProvider>
+        {/*</ThemeProvider>*/}
         </body>
         </html>
     );
