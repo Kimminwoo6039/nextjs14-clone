@@ -9,9 +9,7 @@ import { FiPlay } from "react-icons/fi";
 import IconButton from "@/components/elements/IconButton";
 
 const PlayListCard = ({playlist}) => {
-
     const {push} = useRouter()
-
 
     const {
         id,
