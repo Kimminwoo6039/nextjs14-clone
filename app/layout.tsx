@@ -4,6 +4,7 @@ import "./globals.css";
 import {ThemeProvider} from "@/providers/themeProvider";
 import Sidebar from "@/components/Sidebar";
 
+
 const inter = Inter({subsets: ["greek-ext"]});
 
 export const metadata: Metadata = {
@@ -21,18 +22,18 @@ export default async function RootLayout({
     return (
         <html lang="en">
         <body
-            // className={inter.className}
+            className={inter.className}
         >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-        >
+        {/*<ThemeProvider*/}
+        {/*    attribute="class"*/}
+        {/*    defaultTheme="System"*/}
+        {/*    enableSystem*/}
+        {/*    disableTransitionOnChange*/}
+        {/*>*/}
             <Sidebar>
                 {children}
             </Sidebar>
-        </ThemeProvider>
+        {/*</ThemeProvider>*/}
         </body>
         </html>
     );

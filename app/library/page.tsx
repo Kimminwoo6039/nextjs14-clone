@@ -1,9 +1,13 @@
 import React from 'react'
+import {DataTable1} from "@/app/library/ReactTabulator";
+import PagePadding from "@/components/PagePadding";
 
 const page = () => {
     return (
         <div>
-            library
+            <PagePadding>
+            <DataTable1 />
+            </PagePadding>
         </div>
     )
 }
